@@ -1,0 +1,491 @@
+﻿<krpano version="1.20.7" title="3DTour">
+
+	<include url="skin/text.xml" />
+	
+	<include url="skin/vtourskin.xml" />	
+	
+	<!--	-->
+	
+
+	
+
+	<!-- customize skin settings: maps, gyro, webvr, thumbnails, tooltips, layout, design, ... Look at vtourskin 
+		for everpano set loadscene_flags="MERGE|KEEPVIEW|KEEPMOVING" 
+		for tooltips hotspots set tooltips_hotspots="true"
+	-->
+	<skin_settings maps="false"  tooltips_hotspots="false" autotour="false" />
+	
+	<!-- startup action - load the first scene -->
+	<action name="startup" autorun="onstart">
+		if(lang === null OR lang == '', set(lang,'ua'));
+		set(hs_tapped, '');
+		set(all_zorder, 10);
+		if(startscene === null OR !scene[get(startscene)], copy(startscene,scene[0].name); );
+		loadscene(get(startscene), null, MERGE);
+		if(startactions !== null, startactions() );
+	</action>
+
+	
+	
+	<events onmousedown="showlog(false); hide_tooltips();" onmouseup="show_view();" />
+
+<!-- 
+	<events 
+        	onmousedown="show_coord()"
+
+		/>
+	<action name="show_coord">
+		showlog();
+		screentosphere(mouse.x, mouse.y, toh, tov);
+		roundval(toh, 2);
+		roundval(tov, 2);
+		trace('ath="', get(toh), '"  atv="', get(tov) , '" ');
+	</action>
+		
+	-->
+	
+	
+		<!--
+		<scene name="s1" title="text1" onstart="" thumburl="img/1.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmin="70" fovmax="160" lookatmin="-90" vlookatmax="90" limitview="fullrange" />
+
+		<preview url="img/1.tiles/preview.jpg" />
+
+		<image prealign="0|0.0|0">
+			<cube url="img/1.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,768,1664,3328" />
+		</image>
+		
+		
+		
+	<hotspot name="hs1" 
+		style="skin_base|for_img_hotspot"
+		tooltip="m1"
+		tooltip_url="%SWFPATH%/img/info/m1.jpg"	
+		ath="-144" atv="2"
+	/>
+	
+
+	-->
+	
+	
+	<scene name="s1" title="1" onstart="" thumburl="img/1.tiles/thumb.jpg" lat="9.18396500" lng="99.86563667" heading="0.0">
+
+		<view hlookat="93.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmin="70" fovmax="160"  limitview="fullrange" />
+
+		<preview url="img/1.tiles/preview.jpg" />
+
+		<image prealign="0|0.0|0">
+			<cube url="img/1.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,768,1664,3200" />
+		</image>
+		
+		<!--
+		<hotspot name="to_next_scene"
+         style="skin_hotspotstyle"
+         ath="85"
+         atv="12"
+         linkedscene="s2"
+         onclick="skin_loadscene(get(linkedscene), get(skin_settings.loadscene_blend));"
+		 linkedscene_lookat="30,10,90"
+         onclick="skin_hidetooltips(); tween(alpha,0,0.5); loadscene(linkedscene,null,MERGE,OPENBLEND(1)); lookto(linkedscene_lookat);" />
+         />
+		
+		 
+		 <hotspot name="to_scene2_smooth"
+         style="skin_hotspotstyle"
+         ath="85"  atv="12"
+         linkedscene="s2"
+         onclick="loadscene(get(linkedscene), null, MERGE|KEEPMOVING, FADEBLEND(2.0)); action(set_next_view(90, 0, 120));" />
+	
+		
+		onclick="lookto(30, 10, 90, 0);  loadscene(get(linkedscene), null, MERGE|KEEPVIEW, FADEBLEND(2.0));"
+		
+		<hotspot name="hs1"
+			ath="85"  atv="12" 
+			style="skin_hotspotstyle" 
+			rotate="0"	
+			onover="tooltips(s2)"
+			onclick="go_pano(s2,0,0)"/>
+			
+			
+			
+		<hotspot 	style="skin_hotspotstyle" name="hs_1"
+				ath="182" atv="20"
+				linkedscene="s2" 
+				linkedscene_lookat="0" 
+				rotate="0"
+			-->
+			
+			<hotspot 	style="skin_hotspotstyle" name="hs_1"
+					ath="85" atv="15"
+					linkedscene="s2" 
+					linkedscene_lookat="5, 0, 140" 
+					rotate="0"
+		/>
+			
+			
+		<hotspot 	style="skin_hotspotstyle" name="hs_2"
+					ath="60" atv="13"
+					linkedscene="s12" 
+					linkedscene_lookat="-56, 0, 120" 
+					rotate="0"
+		/>
+		
+		<hotspot 	style="skin_hotspotstyle" name="hs_3"
+					ath="121" atv="14"
+					linkedscene="s11" 
+					linkedscene_lookat="-86, 0, 120" 
+					rotate="45"
+		/>
+
+
+	</scene>
+
+	<scene name="s2" title="2" onstart="" thumburl="img/2.tiles/thumb.jpg" lat="9.18396167" lng="99.86562333" heading="0.0">
+
+		<view hlookat="5.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmin="70" fovmax="140"  limitview="fullrange" />
+
+		<preview url="img/2.tiles/preview.jpg" />
+
+		<image  prealign="0|-6.0|0">
+			<cube url="img/2.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,768,1664,3200" />
+		</image>
+
+		<hotspot 	style="skin_hotspotstyle" name="hs_2"
+					ath="-2" atv="35"
+					linkedscene="s3" 
+					linkedscene_lookat="0, 0, 140" 
+					rotate="0"
+		/>
+		
+		<hotspot 	style="skin_hotspotstyle" name="hs_3"
+					ath="-165" atv="35"
+					linkedscene="s1" 
+					linkedscene_lookat="-80, 0, 150" 
+					rotate="0"
+		/>
+
+	</scene>
+
+	<scene name="s3" title="3" onstart="" thumburl="img/3.tiles/thumb.jpg" lat="9.18404667" lng="99.86562833" heading="0.0">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmin="70" fovmax="160"  limitview="fullrange" />
+
+		<preview url="img/3.tiles/preview.jpg" />
+
+		<image  prealign="0|0.0|0">
+			<cube url="img/3.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,768,1664,3200" />
+		</image>
+		
+		<hotspot 	style="skin_hotspotstyle" name="hs_2"
+					ath="-2" atv="35"
+					linkedscene="s5" 
+					linkedscene_lookat="0, 0, 140" 
+					rotate="0"
+		/>
+		
+		<hotspot 	style="skin_hotspotstyle" name="hs_3"
+					ath="88" atv="42"
+					linkedscene="s4" 
+					linkedscene_lookat="0, 0, 140" 
+					rotate="0"
+		/>
+		
+		<hotspot 	style="skin_hotspotstyle" name="hs_4"
+					ath="169" atv="33"
+					linkedscene="s2" 
+					linkedscene_lookat="185, 0, 140" 
+					rotate="0"
+		/>
+		
+
+	</scene>
+
+	<scene name="s4" title="4" onstart="" thumburl="img/4.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmin="70" fovmax="160"  limitview="fullrange" />
+
+		<preview url="img/4.tiles/preview.jpg" />
+
+		<image  prealign="0|0.0|0">
+			<cube url="img/4.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,768,1664,3200" />
+		</image>
+		
+		<hotspot 	style="skin_hotspotstyle" name="hs_2"
+					ath="179" atv="38"
+					linkedscene="s3" 
+					linkedscene_lookat="-90, 0, 150" 
+					rotate="0"
+		/>
+		
+
+		
+		
+
+	</scene>
+
+	<scene name="s5" title="5" onstart="" thumburl="img/5.tiles/thumb.jpg" lat="9.18409333" lng="99.86561833" heading="0.0">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="140" maxpixelzoom="1.0" fovmin="70" fovmax="160"  limitview="fullrange" />
+
+		<preview url="img/5.tiles/preview.jpg" />
+
+		<image  prealign="0|0.0|0">
+			<cube url="img/5.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,768,1664,3200" />
+		</image>
+		
+		<hotspot 	style="skin_hotspotstyle" name="hs_2"
+					ath="-2" atv="35"
+					linkedscene="s7" 
+					linkedscene_lookat="-20, 0, 140" 
+					rotate="0"
+		/>
+		
+		<hotspot 	style="skin_hotspotstyle" name="hs_3"
+					ath="79" atv="42"
+					linkedscene="s6" 
+					linkedscene_lookat="-126, 0, 150" 
+					rotate="0"
+		/>
+		
+		<hotspot 	style="skin_hotspotstyle" name="hs_4"
+					ath="-165" atv="35"
+					linkedscene="s3" 
+					linkedscene_lookat="180, 0, 140" 
+					rotate="0"
+		/>
+		
+		<hotspot 	style="skin_hotspotstyle" name="hs_5"
+					ath="-82" atv="30"
+					linkedscene="s12" 
+					linkedscene_lookat="-10, 0, 120" 
+					rotate="0"
+		/>
+
+
+		
+		
+
+	</scene>
+
+	<scene name="s6" title="6" onstart="" thumburl="img/6.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmin="70" fovmax="160"  limitview="fullrange" />
+
+		<preview url="img/6.tiles/preview.jpg" />
+
+		<image  prealign="0|0.0|0">
+			<cube url="img/6.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,768,1664,3200" />
+		</image>
+		
+		<hotspot 	style="skin_hotspotstyle" name="hs_2"
+					ath="68" atv="41"
+					linkedscene="s5" 
+					linkedscene_lookat="-90, 0, 140" 
+					rotate="0"
+		/>
+		
+
+		
+		
+
+	</scene>
+
+	<scene name="s7" title="7" onstart="" thumburl="img/7.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmin="70" fovmax="160"  limitview="fullrange" />
+
+		<preview url="img/7.tiles/preview.jpg" />
+
+		<image  prealign="0|0.0|0">
+			<cube url="img/7.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,768,1664,3200" />
+		</image>
+		
+		
+		<hotspot 	style="skin_hotspotstyle" name="hs_2"
+					ath="25" atv="13"
+					linkedscene="s11" 
+					linkedscene_lookat="-86, 0, 120" 
+					rotate="-90"
+		/>
+		
+		<hotspot 	style="skin_hotspotstyle" name="hs_3"
+					ath="44" atv="10"
+					linkedscene="s8" 
+					linkedscene_lookat="4, 0, 150" 
+					rotate="45"
+		/>
+		
+		<hotspot 	style="skin_hotspotstyle" name="hs_4"
+					ath="165" atv="33"
+					linkedscene="s5" 
+					linkedscene_lookat="182, 0, 140" 
+					rotate="0"
+		/>
+		
+
+		
+		
+
+	</scene>
+
+	<scene name="s8" title="8" onstart="" thumburl="img/8.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmin="70" fovmax="160"  limitview="fullrange" />
+
+		<preview url="img/8.tiles/preview.jpg" />
+
+		<image  prealign="0|0.0|0">
+			<cube url="img/8.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,768,1664,3200" />
+		</image>
+		
+			<hotspot 	style="skin_hotspotstyle" name="hs_2"
+					ath="1" atv="-2"
+					linkedscene="s9" 
+					linkedscene_lookat="45, 7, 140" 
+					rotate="0"
+		/>
+		
+		<hotspot 	style="skin_hotspotstyle" name="hs_3"
+					ath="73" atv="50"
+					linkedscene="s7" 
+					linkedscene_lookat="176, 0, 140" 
+					rotate="0"
+		/>
+		
+		<hotspot 	style="skin_hotspotstyle" name="hs_4"
+					ath="170" atv="48"
+					linkedscene="s11" 
+					linkedscene_lookat="-86, 0, 120" 
+					rotate="0"
+		/>
+
+		
+		
+
+	</scene>
+
+	<scene name="s9" title="9" onstart="" thumburl="img/9.tiles/thumb.jpg" lat="9.18403611" lng="99.86562500" heading="90.9">
+
+		<view hlookat="90.9" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmin="70" fovmax="160"  limitview="fullrange" />
+
+		<preview url="img/9.tiles/preview.jpg" />
+
+		<image prealign="0|90.9|0">
+			<cube url="img/9.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,768,1664,3200" />
+		</image>
+		
+		<hotspot 	style="skin_hotspotstyle" name="hs_2"
+					ath="1" atv="35"
+					linkedscene="s10" 
+					linkedscene_lookat="179, 7, 140" 
+					rotate="-45"
+		/>
+		
+		<hotspot 	style="skin_hotspotstyle" name="hs_3"
+					ath="-167" atv="35"
+					linkedscene="s8" 
+					linkedscene_lookat="-171, 30, 150" 
+					rotate="-45"
+		/>
+
+		
+		
+
+	</scene>
+
+	<scene name="s10" title="10" onstart="" thumburl="img/10.tiles/thumb.jpg" lat="9.18404167" lng="99.86564667" heading="0.0">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmin="70" fovmax="160"  limitview="fullrange" />
+
+		<preview url="img/10.tiles/preview.jpg" />
+
+		<image  prealign="0|0.0|0">
+			<cube url="img/10.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,768,1664,3200" />
+		</image>
+		
+		<hotspot 	style="skin_hotspotstyle" name="hs_3"
+					ath="-21" atv="32"
+					linkedscene="s9" 
+					linkedscene_lookat="160, 0, 140" 
+					rotate="0"
+		/>
+
+		
+		
+
+	</scene>
+
+	<scene name="s11" title="11" onstart="" thumburl="img/11.tiles/thumb.jpg" lat="9.18408500" lng="99.86564667" heading="0.0">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmin="70" fovmax="160"  limitview="fullrange" />
+
+		<preview url="img/11.tiles/preview.jpg" />
+
+		<image  prealign="0|-80.0|0">
+			<cube url="img/11.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,768,1664,3200" />
+		</image>
+		
+		<hotspot 	style="skin_hotspotstyle" name="hs_2"
+					ath="-95" atv="19"
+					linkedscene="s7" 
+					linkedscene_lookat="150, 0, 140" 
+					rotate="0"
+		/>
+		
+		<hotspot 	style="skin_hotspotstyle" name="hs_3"
+					ath="-125" atv="15"
+					linkedscene="s1" 
+					linkedscene_lookat="93, 0, 120" 
+					rotate="45"
+		/>
+
+		<hotspot 	style="skin_hotspotstyle" name="hs_4"
+					ath="-27" atv="11"
+					linkedscene="s12" 
+					linkedscene_lookat="50, 0, 120" 
+					rotate="-45"
+		/>
+
+		
+		
+
+	</scene>
+
+	<scene name="s12" title="12" onstart="" thumburl="img/12.tiles/thumb.jpg" lat="9.18410000" lng="99.86561833" heading="0.0">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmin="70" fovmax="160"  limitview="fullrange" />
+
+		<preview url="img/12.tiles/preview.jpg" />
+
+		<image  prealign="0|0.0|0">
+			<cube url="img/12.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,768,1664,3200" />
+		</image>
+
+
+		<hotspot 	style="skin_hotspotstyle" name="hs_2"
+					ath="-11" atv="16"
+					linkedscene="s5" 
+					linkedscene_lookat="90, 0, 140" 
+					rotate="0"
+		/>
+		
+		<hotspot 	style="skin_hotspotstyle" name="hs_3"
+					ath="-73" atv="12"
+					linkedscene="s11" 
+					linkedscene_lookat="-86, 0, 120" 
+					rotate="45"
+		/>
+
+		<hotspot 	style="skin_hotspotstyle" name="hs_4"
+					ath="70" atv="9"
+					linkedscene="s1" 
+					linkedscene_lookat="83, 0, 120" 
+					rotate="0"
+		/>
+
+
+	</scene>
+
+
+</krpano>

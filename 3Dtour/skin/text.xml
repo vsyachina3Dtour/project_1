@@ -1,0 +1,80 @@
+<krpano>
+
+<!-- texts -->
+ <phrase name="text1" >
+		<language name="ua" text="Панорама 1" />
+ </phrase>	
+ 
+  <phrase name="text2" >
+		<language name="ua" text="Панорама 1" />
+ </phrase>
+ 
+<phrase name="text3" >
+		<language name="ua" text="Панорама 2" />
+ </phrase>
+ 
+ <phrase name="text4" >
+		<language name="ua" text="Панорама 3" />
+ </phrase>
+ 
+ <phrase name="text5" >
+		<language name="ua" text="Панорама 4" />
+ </phrase>
+ 
+ <phrase name="text6" >
+		<language name="ua" text="Панорама 5" />
+ </phrase>
+ 
+ <phrase name="text7" >
+		<language name="ua" text="Панорама 6" />
+ </phrase>
+ 
+ <phrase name="text8" >
+		<language name="ua" text="Панорама 7" />
+ </phrase>
+ 
+ <phrase name="text9" >
+		<language name="ua" text="Панорама 8" />
+ </phrase>
+ 
+ <phrase name="text10" >
+		<language name="ua" text="Панорама 9" />
+ </phrase>
+ 
+ <phrase name="text11" >
+		<language name="ua" text="Панорама 10" />
+ </phrase>
+ 
+ <phrase name="text12" >
+		<language name="ua" text="Панорама 11" />
+ </phrase>
+ 
+ <phrase name="text13" >
+		<language name="ua" text="Панорама 12" />
+ </phrase>
+ 
+ <phrase name="m1" >
+		<language name="ua" text="Диспенсер для мила та паперові рушники" />
+ </phrase>	
+
+ <phrase name="m2" >
+		<language name="ua" text="Каністра для води та диспенсер для мила" />
+ </phrase>	
+
+ <phrase name="m3" >
+		<language name="ua" text="Паперові рушники" />
+ </phrase>	
+
+ <phrase name="m4" >
+		<language name="ua" text="Затискач кейсів" />
+ </phrase>	
+
+ <phrase name="m5" >
+		<language name="ua" text="Інвертор змінного струму 1500Вт 220В" />
+ </phrase>	
+
+
+
+<!-- /texts -->
+
+</krpano>
